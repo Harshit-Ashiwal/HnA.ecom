@@ -22,7 +22,8 @@
   width: 100%;
   height: 100%;
   /* background-image: url("/heels.jpg"); */
-  background-image: url("heels.jpg");
+  background-image: url("Heels.jpg");
+  background-image: url(Heels.jpg);
 
   opacity: 0.8;
   background-attachment: fixed;
