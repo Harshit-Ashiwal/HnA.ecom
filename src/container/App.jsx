@@ -14,28 +14,10 @@ const App = () => {
     <div className="App">
       <Router>
         <Routes>
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           <Route
-            path="/Register"
-            element={
-              currForm === "Register" ? (
-                <Register onFormSwitch={toggleForm} />
-              ) : (
-                <Login onFormSwitch={toggleForm} />
-              )
-            }
-          />
-          <Route
-            path="/Login"
-            element={
-              currForm === "Register" ? (
-                <Register onFormSwitch={toggleForm} />
-              ) : (
-                <Login onFormSwitch={toggleForm} />
-              )
-            }
-          />
-          <Route
-            path="/"
+            path="/*"
             element={
               currForm === "Register" ? (
                 <Register onFormSwitch={toggleForm} />
@@ -64,3 +46,5 @@ export default App;
 //       )}
 //     </div>
 //   );
+
+// Password should be a minimum of 6 characters and contain at least one uppercase letter, one lowercase letter, and a number

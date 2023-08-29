@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
-
+import { Link } from "react-router-dom";
 // functional component
 const Login = (props) => {
   // defining States
@@ -54,9 +54,9 @@ const Login = (props) => {
       <DevTool control={control} />
       <button
         className="link-btn"
-        onClick={() => props.onFormSwitch("Register")}
+        // onClick={() => props.onFormSwitch("Register")}
       >
-        New User? Register here.
+        <Link to="register"> New User? Register here. </Link>
       </button>
     </div>
   );

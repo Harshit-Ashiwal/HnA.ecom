@@ -28,7 +28,7 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: 10; /* Adjust the opacity as desired */
+  z-index: -1; /* Adjust the opacity as desired */
 }
 .HnA {
   font-family: "Cinzel", serif;
@@ -36,7 +36,8 @@
   position: absolute; /* color: #5a4333; */ /* color: #556B2F; */
   color: #968f7c; /* background-color: black; */
   font-size: -webkit-xxx-large;
-  user-select: none;
+  /* user-select: none; */
+  cursor: pointer;
 }
 
 .container,
