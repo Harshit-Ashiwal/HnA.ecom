@@ -1,12 +1,25 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { DevTool } from "@hookform/devtools";
-import { Link } from "react-router-dom";
+import {
+  signInWithGooglePopup,
+  createUserDocumentFromAuth,
+} from "../utils/firstbase.jsx";
+
 // functional component
 const Login = (props) => {
   // defining States
   // const [Email, setEmail] = useState("");
   // const [Password, setPassword] = useState("");
+
+  const logGoogleUser = async () => {
+    try {
+      const { user } = await signInWithGooglePopup();
+      // console.log(response);
+      createUserDocumentFromAuth(user);
+    } catch (error) {
+      console.error("Google sign-in error:", error);
+    }
+  };
 
   // react-hook-form
   const { register, handleSubmit, control, formState } = useForm();
@@ -44,22 +57,28 @@ const Login = (props) => {
           type="password"
           placeholder="Password "
           {...register("password", { required: "*password is required" })}
-        />
+          />
         <p className="input-errors">{errors.password?.message}</p>
 
         <button className="login-btn" type="submit">
           Login{" "}
         </button>
       </form>
-      <DevTool control={control} />
       <button
         className="link-btn"
-        // onClick={() => props.onFormSwitch("Register")}
+        onClick={() => props.onFormSwitch("Register")}
       >
-        <Link to="register"> New User? Register here. </Link>
+        New User? Register here.
       </button>
+      <button onClick={logGoogleUser}>Sing in with Google </button>
     </div>
   );
 };
 
 export default Login;
+
+// import { Link } from "react-router-dom";
+{/* <Link to="register"> */}
+        {/* </Link> */}
+        {/* <DevTool control={control} /> */}
+        // import { DevTool } from "@hookform/devtools";

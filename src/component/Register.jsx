@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { DevTool } from "@hookform/devtools";
-import { Link } from "react-router-dom";
 const Register = (props) => {
   // STATE Declaration
   // const [Name, setName] = useState("");
@@ -12,7 +10,6 @@ const Register = (props) => {
   //react-hook-form
   const { register, handleSubmit, control, formState } = useForm();
   const { errors } = formState;
-  // const { register, handleSubmit, errors } = useForm();
 
   //handleSubmit Function fro prevent refresh page onSubmit form
   const onSubmit = (data) => {
@@ -75,15 +72,23 @@ const Register = (props) => {
         </button>
       </form>
 
-      <DevTool control={control} />
-      <button
-        className="link-btn"
-        //  onClick={() => props.onFormSwitch("Login")}
-      >
-        <Link to="login">Already created account? Login here.</Link>
+      <button className="link-btn" onClick={() => props.onFormSwitch("Login")}>
+        Already created account? Login here.
       </button>
     </div>
   );
 };
 
 export default Register;
+
+// import { Link } from "react-router-dom";
+// import { DevTool } from "@hookform/devtools";
+{
+  /* <Link to="login"> */
+}
+{
+  /* </Link> */
+}
+{
+  /* <DevTool control={control} /> */
+}
