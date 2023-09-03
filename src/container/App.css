@@ -15,13 +15,12 @@
 }
 
 .App {
-  content: \"\";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("Heels.jpg");
+  background-image: url("../assets/images/bg.jpg");
 
   opacity: 0.8;
   background-attachment: fixed;
