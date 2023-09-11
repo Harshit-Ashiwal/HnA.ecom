@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
-} from "../utils/firstbase.jsx";
+} from "../../utils/firstbase.jsx";
 
 // functional component
 const Login = (props) => {
@@ -57,7 +57,7 @@ const Login = (props) => {
           type="password"
           placeholder="Password "
           {...register("password", { required: "*password is required" })}
-          />
+        />
         <p className="input-errors">{errors.password?.message}</p>
 
         <button className="login-btn" type="submit">
@@ -78,7 +78,13 @@ const Login = (props) => {
 export default Login;
 
 // import { Link } from "react-router-dom";
-{/* <Link to="register"> */}
-        {/* </Link> */}
-        {/* <DevTool control={control} /> */}
-        // import { DevTool } from "@hookform/devtools";
+{
+  /* <Link to="register"> */
+}
+{
+  /* </Link> */
+}
+{
+  /* <DevTool control={control} /> */
+}
+// import { DevTool } from "@hookform/devtools";

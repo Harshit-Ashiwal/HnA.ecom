@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import Login from "../component/Login";
 import "./App.css";
 // import Register from "../component/Register";
-import Home from "./Home";
+import Home from "../component/Home";
 
 const App = () => {
   return <Home />;
